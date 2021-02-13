@@ -1,0 +1,20 @@
+<div class="container my-5 px-5">
+    <form action="/program/uploads" method="POST" enctype="multipart/form-data">
+        <h1 class="text-center">Add Program</h1>
+        {{> error/add-program }}
+        <div class="mb-3">
+            <label for="title" class="form-label">Title</label>
+            <input type="text" name="title" class="form-control" placeholder="Add title of the program." required>
+        </div>
+        <div class="mb-3">
+            <label for="content" class="form-label">Content</label>
+            <textarea rows="8" type="text" name="content" class="form-control"
+                placeholder="Add content of the program"></textarea>
+        </div>
+        <div class="mb-3">
+            <label for="image" class="form-label">Image</label>
+            <input type="file" name="image" class="form-control" placeholder="Add Image">
+        </div>
+        <button type="submit" class="btn btn-primary btn-block mb-5">Submit</button>
+    </form>
+</div>

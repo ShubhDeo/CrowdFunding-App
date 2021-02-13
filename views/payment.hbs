@@ -1,0 +1,67 @@
+<div class="px-5">
+    <h1 class="text-center display-4 my-5">Payment Gateway</h1>
+
+    <div>
+        <!-- Modal -->
+        <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Payment Successful</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        Thank you for the contribution.
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <a href="/" class="btn btn -secondary">Go Home</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <h3 class="text-center  my-5" id='admin'>{{file.admin.name}}</h3>
+        <h4 class="text-center  my-5" id="title">{{file.title}}</h4>
+        <div class="alert alert-danger alert-dismissible fade show" role="alert" style="display: none;">
+            <div id="error-message"></div>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        <form action="/payment/charge" method="post" id="payment-form">
+            <input type="hidden" id='program-id' name="programId" value="{{file.imageId}}">
+            <div class="form-group mb-3">
+                <label for="contributor">Contributor's name</label>
+                <input type="text" class="form-control" name="name" required>
+            </div>
+            <div class="form-group mb-3">
+                <label for="contributorEmail">Email</label>
+                <input type="email" class="form-control" name="email" required>
+            </div>
+            <div class="form-group mb-3">
+                <label for="contributorTel">Mobile Number</label>
+                <input type="text" class="form-control" name="tel" required>
+            </div>
+
+            <div class="form-group">
+                <label for="contributor-tel">Contribution</label>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon1">₹</span>
+                    </div>
+                    <input type="text" class="form-control" id="amount" name="amount" placeholder="Contribution"
+                        required>
+                </div>
+            </div>
+            <label for="card">Card Details</label>
+            <div id="card-element"></div>
+
+            <div class="d-grid gap-2">
+
+                <button type="submit" id="btn" class="btn btn-dark  mt-4"><i class="fas fa-rupee-sign"></i> Pay
+                    Now</button>
+            </div>
+
+        </form>
+    </div>
+
+
+</div>

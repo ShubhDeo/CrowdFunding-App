@@ -1,0 +1,39 @@
+<h1 class="mt-4">Dashboard</h1>
+<p class="lead mb-3">Welcome {{name}} </p>
+
+
+{{#if programs}}
+<p class="lead my-3">Here are your current programs.</p>
+<table class="my-5 table table-striped ">
+    <thead class="thead-dark">
+        <tr class="mb-4">
+            <th>Title</th>
+            <th>Date</th>
+            <th>Delete Program</th>
+            <th>Donations</th>
+        </tr>
+    </thead>
+
+    <tbody class="tbody-light">
+        {{#each programs}}
+        <tr>
+            <td>{{title}}</td>
+            <td>{{formatDate createdAt 'MMMM Do YYYY, h:mm:ss a'}}</td>
+            <td>
+
+                <form action="/program/{{imageId}}" method="POST" id="delete-form">
+                    <input type="hidden" name="_method" value='DELETE'>
+                    <button class="btn btn-danger my-1" type="submit">
+                        <i class="fas fa-trash"></i>
+                    </button>
+                </form>
+            </td>
+            <td><a href="/admin/programDonation/{{imageId}}" class="btn btn-dark"><small>View
+                        Donations.</small></a></td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
+{{else}}
+<p>You don't have any programs.</p>
+{{/if}}

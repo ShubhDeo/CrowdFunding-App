@@ -1,0 +1,141 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+p, h5{
+    line-height: 2 !important;
+}
+
+.StripeElement {
+    box-sizing: border-box;
+  
+    height: 40px;
+  
+    padding: 10px 12px;
+  
+    border: 1px solid transparent;
+    border-radius: 4px;
+    background-color: white;
+  
+    box-shadow: 0 1px 3px 0 #e6ebf1;
+    -webkit-transition: box-shadow 150ms ease;
+    transition: box-shadow 150ms ease;
+  }
+  
+  .StripeElement--focus {
+    box-shadow: 0 1px 3px 0 #cfd7df;
+  }
+  
+  .StripeElement--invalid {
+    border-color: #fa755a;
+  }
+  
+  .StripeElement--webkit-autofill {
+    background-color: #fefde5 !important;
+  }
+
+.home-page {
+   height: 100vh;
+   background: url('https://images.unsplash.com/photo-1569437061241-a848be43cc82?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+   background-repeat: no-repeat;
+   background-size: cover;
+   background-position: center;
+   color: white;  
+   display: flex;
+   align-items: center;
+   flex-direction: column;
+}
+
+.home-page h1 {
+    height: 10vh;
+    font-size: 3.5rem;
+    font-weight: 900;
+    text-align: center;
+}
+
+.home-signup {
+  display: flex;
+}
+.home-signup button {
+  height: 50px;
+  width: 150px;
+  margin: 20px 10px;
+  background: transparent;
+  color: white;
+  border: none;
+  outline: none;
+  border: 1px solid white;
+  border-radius: 10px;
+}
+
+.home-signup a {
+  color: white !important;
+}
+
+
+.home-center button {
+    color: white;
+    background: transparent;
+    height: 90px;
+    width: 200px;
+    font-size: 2rem;
+    border: 1px solid white;
+    border-radius: 5px;
+    outline: none;
+    margin: 0 10px;
+}
+
+.home-center button:hover,
+.home-center button:active {
+    background-color: #1b8192;
+    border: none;
+}
+
+
+.home-center {
+    height: 90vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.home-buttons {
+    width: 100%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 10px;
+}
+
+.btn-1 {
+  
+  min-height: 35%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+table {
+    width: 100%;
+}
+
+.ngo-contribution th {
+  width: 30%;
+}
+
+
+@media only screen and (max-width: 769px) {
+    .home-buttons {
+        grid-gap: 20px;
+        grid-template-columns: repeat(auto-fit, 100%) !important;
+    }
+}
+
+
+
+

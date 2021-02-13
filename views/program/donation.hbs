@@ -1,0 +1,39 @@
+<div class="container">
+    <h1 class="text-center my-3">{{admin}}</h1>
+    <h2 class="text-center mt-3 mb-5">{{name}}</h2>
+    {{#if payments}}
+    <h3 class="mt-3 mb-2 text-center">Current Contributors</h3>
+    <table class="my-5 table table-striped ">
+        <thead class="thead-dark ">
+            <tr class="mb-4">
+                <th>Name</th>
+                <th>email</th>
+                <th>Contact</th>
+                <th>Donation</th>
+                <th>Date of Donation</th>
+            </tr>
+        </thead>
+
+        <tbody class="tbody-light">
+            {{#each payments}}
+            <tr>
+                <td>{{name}}</td>
+                <td>{{email}}</td>
+                <td>{{tel}}</td>
+                <td>₹ {{amount}}</td>
+                <td>{{formatDate createdAt 'MMMM Do YYYY, h:mm:ss a'}}</td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+    <div class="alert alert-success" role="alert">
+        <h4><strong>Total Amount: </strong> ₹ {{sum}}</h4>
+    </div>
+    {{else}}
+    <div class="text-center my-5">
+        <h3 class="text-grey mt-5 mb-3">No Donation</h3>
+        <iframe src="https://giphy.com/embed/TydZAW0DVCbGE" width="480" height="398" frameBorder="0"
+            class="giphy-embed"></iframe>
+    </div>
+    {{/if}}
+</div>
